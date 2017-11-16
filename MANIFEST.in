@@ -1,0 +1,3 @@
+graft balto/templates
+graft balto/static
+include balto/schema.sql

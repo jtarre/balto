@@ -1,0 +1,77 @@
+<!doctype html>
+<head>
+    <title>TED Search</title>
+    <!-- Latest compiled and minified CSS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-8">
+            <h2>Search Ted talks!</h2>
+            <p><em>Search & highlight interesting content in popular Ted talks</em></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="input-group">
+                    <input id="searchBar" type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button id="searchBarButton" class="btn btn-default" type="button">
+                            Search
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    TED Talks
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="/talk-1">Talk 1</a></li>
+                    <li><a href="/talk-2">Talk 2</a></li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-8">
+                <h3>Ted Talk Transcript</h3>
+            </div>
+        </div>
+    </div>
+        
+    
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+          crossorigin="anonymous"></script>
+          <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>       
+    <script>
+      $(function() {
+        $("#searchBarButton").on('click', highlight);
+        $("#searchBar").keypress(highlightKeypress);
+        
+        function highlightKeypress(e) {
+            if(e.which == 13)
+                console.log(e.target.value);
+        }
+
+        function highlight(e) {
+            console.log($("#searchBar").val(), document.getElementById('searchBar').value);
+        }
+      });
+    </script>
+</body>
+
+

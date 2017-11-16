@@ -1,0 +1,11 @@
+MANIFEST.in
+balto/__init__.py
+balto/hello.py
+balto/schema.sql
+balto.egg-info/PKG-INFO
+balto.egg-info/SOURCES.txt
+balto.egg-info/dependency_links.txt
+balto.egg-info/requires.txt
+balto.egg-info/top_level.txt
+balto/templates/hello.html
+balto/templates/talk.html
