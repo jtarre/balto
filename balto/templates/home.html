@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block body %}
+<div>
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-8">
+            <h2><a href="/" style="text-decoration:none;color:black;">Search Ted talks!</a></h2>
+            <p><em>Search & highlight interesting content in popular Ted talks</em></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="input-group">
+                    <input id="searchBar" type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button id="searchBarButton" class="btn btn-default" type="button">
+                            Search
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    TED Talks
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    {% for title in titles %}
+                      <li><a href="talk/{{title[0]}}">{{ title[1] }}</a></li>
+                    {% else %}
+                      <li><em>Unbelievable.  No titles here so far</em>
+                    {% endfor %}
+                  </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-8">
+                <h3>Transcript</h3>
+                {% if selected %}
+                    <h4>{{ selected[4]}} <span><small><em><a target="_blank" href="{{selected[5]}}">See the video on ted.com</a></em></small></span></h4>
+                    <p id="ted-transcript">{{ selected[2] }}</p>
+                {% else %}
+                    <p><em>Select one to see its transcript!</em></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

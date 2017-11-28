@@ -32,17 +32,25 @@ def main():
  
     sql_create_transcripts_table = """ CREATE TABLE IF NOT EXISTS transcripts (
                                         id integer PRIMARY KEY,
-                                        title text NOT NULL,
                                         url text,
                                         talk text
                                     ); """
  
+    sql_create_title_table = """ CREATE TABLE IF NOT EXISTS titles (
+                                        id integer PRIMARY KEY,
+                                        title text NOT NULL,
+                                        url text NOT NULL
+                                    ); """
  
+    
+
     # create a database connection
     conn = create_connection(database)
     if conn is not None:
         # create transcripts table
         create_table(conn, sql_create_transcripts_table)
+        create_table(conn, sql_create_title_table)
+
     else:
         print("Error! cannot create the database connection.")
 
